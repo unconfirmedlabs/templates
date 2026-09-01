@@ -1,6 +1,6 @@
 <!--
   Template: security policy. Keep the reporting channel reachable and the
-  supported-versions table current at every publish/upgrade.
+  supported-versions table current at every publish.
 -->
 
 # Security Policy
@@ -19,21 +19,24 @@ Responsible disclosure is rewarded via {{program link}}.
 ## Security patches
 
 - Security fixes ship as soon as reasonably possible.
-- On-chain: a patched package version is published and the upgrade is executed
-  (or a new package is deployed, if the package is immutable); the new package
-  ID is announced in a GitHub Security Advisory.
+- On-chain: the package is immutable, so a security fix is a new deployment;
+  the new package ID is announced in a GitHub Security Advisory.
 - SDK (if any): a patched npm release.
 - Each fix is published as a GitHub Security Advisory in this repository.
 
 ### Supported versions
 
-Patches are released for the latest version of the current major line only.
-Critical fixes may be backported to the previous major line.
+The latest deployment receives security fixes. Because the package is
+immutable, earlier deployments cannot be patched; integrators are responsible
+for migrating to a patched package ID.
 
-| Component | Version | Critical fixes | Other fixes |
+| Component | Deployment | Critical fixes | Other fixes |
 |---|---|:---:|:---:|
-| Move package | {{n.x}} ({{network}} `0x{{PACKAGE_ID}}`) | yes | yes |
-| Move package | {{(n-1).x}} | yes | no |
+| Move package (mainnet) | `0x{{PACKAGE_ID}}` | yes | yes |
+| Move package (testnet) | `0x{{PACKAGE_ID}}` | yes | yes |
+<!-- Keep the SDK row only if the repository ships an SDK.
+| TS SDK (npm) | >= {{n.0.0}} | yes | yes |
+-->
 
 ## Legal
 

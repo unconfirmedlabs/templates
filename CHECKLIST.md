@@ -1,7 +1,7 @@
 # Release checklist
 
-Work through this before publishing, upgrading, or tagging a release. Each
-item maps to a template section that must be updated in the same commit.
+Work through this before publishing or tagging a release. Each item maps to a
+template section that must be updated in the same commit.
 
 ## Code
 
@@ -21,18 +21,18 @@ item maps to a template section that must be updated in the same commit.
 - [ ] No template leftovers: `grep -rn '{{' --include='*.md' .` and
       `grep -rn '<!--' --include='*.md' .` return nothing.
 - [ ] The `API` table matches the actual public surface (compare normalized
-      pre/post package summaries for upgrades).
+      pre/post package summaries when the API changes).
 - [ ] The `Deployments` table has one row per environment and matches
       `Published.toml`.
 
 ## Deployment
 
-- [ ] `Published.toml` is committed and reflects the new publish or upgrade.
+- [ ] `Published.toml` is committed and reflects the new publish.
 - [ ] Deployed bytecode is verified against source (`sui client
       verify-source`) for each network recorded in `Published.toml`.
-- [ ] The upgrade policy is stated, and capability custody (multisig, role
-      separation) is recorded, including capability object IDs and the publish
-      transaction digest.
+- [ ] The package is published as immutable (`make_immutable` destroys the
+      `UpgradeCap`), and the publish transaction digests are recorded in the
+      README `Deployments` table.
 
 ## Security
 

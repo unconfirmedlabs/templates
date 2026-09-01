@@ -29,12 +29,15 @@
 ## Deployments
 
 <!-- One row per environment. `Published.toml` is the source of truth; update
-both in the same commit. -->
+both in the same commit. Unconfirmed Labs packages are published as immutable,
+so there is no version column. -->
 
-| Network | Package ID | Version |
+| Network | Package ID | Transaction digest |
 |---|---|---|
-| Mainnet | [`0x{{PACKAGE_ID}}`](https://suiexplorer.com/package/0x{{PACKAGE_ID}}) | {{n}} |
-| Testnet | [`0x{{PACKAGE_ID}}`](https://testnet.suivision.xyz/package/0x{{PACKAGE_ID}}) | {{n}} |
+| Mainnet | [`0x{{PACKAGE_ID}}`](https://suiexplorer.com/package/0x{{PACKAGE_ID}}) | `{{DIGEST}}` |
+| Testnet | [`0x{{PACKAGE_ID}}`](https://testnet.suivision.xyz/package/0x{{PACKAGE_ID}}) | `{{DIGEST}}` |
+
+Both deployments are immutable.
 
 ## Development
 
