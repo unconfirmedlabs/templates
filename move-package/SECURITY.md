@@ -6,7 +6,7 @@
 # Security Policy
 
 Security vulnerabilities in the `{{name}}` package or its components should be
-reported privately to {{security@unconfirmedlabs.com}}. Do not open a public
+reported privately to {{contact@unconfirmed.com}}. Do not open a public
 issue.
 
 <!-- OPTIONAL: delete if there is no bounty program.

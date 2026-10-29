@@ -131,7 +131,7 @@ scope, report. Never claim an audit covers a revision it was not run against.
 See [`AUDIT.md`](AUDIT.md).}} Using this package is not a substitute for a
 security audit of your own deployment.
 
-Report security issues privately to {{security@unconfirmedlabs.com}} per
+Report security issues privately to {{contact@unconfirmed.com}} per
 [`SECURITY.md`](SECURITY.md). Do not open a public issue.
 
 <!-- OPTIONAL:
